@@ -1,0 +1,2006 @@
+{
+    "critical_alerts":  [
+                            {
+                                "cow_id":  "COW-123",
+                                "alert_time":  "2026-03-22T14:30:00",
+                                "disease":  "East_Coast_Fever",
+                                "health_score":  28,
+                                "duration_hours":  12.5,
+                                "location":  {
+                                                 "lat":  -6.7924,
+                                                 "lng":  39.2083
+                                             },
+                                "recommendation":  "CRITICAL: East Coast Fever confirmed.",
+                                "status":  "critical"
+                            },
+                            {
+                                "cow_id":  "COW-087",
+                                "alert_time":  "2026-03-22T13:00:00",
+                                "disease":  "Foot_And_Mouth_Disease",
+                                "health_score":  31,
+                                "duration_hours":  14.2,
+                                "location":  {
+                                                 "lat":  -6.793,
+                                                 "lng":  39.209
+                                             },
+                                "recommendation":  "CRITICAL: FMD suspected.",
+                                "status":  "critical"
+                            },
+                            {
+                                "cow_id":  "COW-156",
+                                "alert_time":  "2026-03-22T12:15:00",
+                                "disease":  "Trypanosomiasis",
+                                "health_score":  35,
+                                "duration_hours":  16.8,
+                                "location":  {
+                                                 "lat":  -6.791,
+                                                 "lng":  39.205
+                                             },
+                                "recommendation":  "CRITICAL: Severe anemia.",
+                                "status":  "critical"
+                            },
+                            {
+                                "cow_id":  "COW-201",
+                                "alert_time":  "2026-03-22T11:45:00",
+                                "disease":  "Lameness_Hoof_Disease",
+                                "health_score":  22,
+                                "duration_hours":  8.5,
+                                "location":  {
+                                                 "lat":  -6.795,
+                                                 "lng":  39.215
+                                             },
+                                "recommendation":  "CRITICAL: Blackleg detected.",
+                                "status":  "critical"
+                            },
+                            {
+                                "cow_id":  "COW-089",
+                                "alert_time":  "2026-03-22T10:30:00",
+                                "disease":  "Foot_And_Mouth_Disease",
+                                "health_score":  38,
+                                "duration_hours":  9.2,
+                                "location":  {
+                                                 "lat":  -6.788,
+                                                 "lng":  39.212
+                                             },
+                                "recommendation":  "CRITICAL: Brucellosis confirmed.",
+                                "status":  "critical"
+                            }
+                        ],
+    "early_warnings":  [
+                           {
+                               "cow_id":  "COW-045",
+                               "alert_time":  "2026-03-22T16:00:00",
+                               "disease":  "East_Coast_Fever",
+                               "health_score":  62,
+                               "duration_hours":  3.2,
+                               "location":  {
+                                                "lat":  -6.7918,
+                                                "lng":  39.2075
+                                            },
+                               "recommendation":  "Early fever detected.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-098",
+                               "alert_time":  "2026-03-22T15:30:00",
+                               "disease":  "Trypanosomiasis",
+                               "health_score":  68,
+                               "duration_hours":  4.0,
+                               "location":  {
+                                                "lat":  -6.7915,
+                                                "lng":  39.2078
+                                            },
+                               "recommendation":  "Trypanosome symptoms.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-167",
+                               "alert_time":  "2026-03-22T14:45:00",
+                               "disease":  "Mastitis",
+                               "health_score":  71,
+                               "duration_hours":  5.5,
+                               "location":  {
+                                                "lat":  -6.792,
+                                                "lng":  39.210
+                                            },
+                               "recommendation":  "Mastitis suspected.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-134",
+                               "alert_time":  "2026-03-22T14:00:00",
+                               "disease":  "Heat_Stress",
+                               "health_score":  65,
+                               "duration_hours":  6.3,
+                               "location":  {
+                                                "lat":  -6.789,
+                                                "lng":  39.213
+                                            },
+                               "recommendation":  "Pneumonia signs.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-205",
+                               "alert_time":  "2026-03-22T13:20:00",
+                               "disease":  "Heat_Stress",
+                               "health_score":  58,
+                               "duration_hours":  7.1,
+                               "location":  {
+                                                "lat":  -6.794,
+                                                "lng":  39.208
+                                            },
+                               "recommendation":  "Fever spike detected.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-112",
+                               "alert_time":  "2026-03-22T12:55:00",
+                               "disease":  "Trypanosomiasis",
+                               "health_score":  73,
+                               "duration_hours":  2.8,
+                               "location":  {
+                                                "lat":  -6.786,
+                                                "lng":  39.214
+                                            },
+                               "recommendation":  "Persistent cough.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-178",
+                               "alert_time":  "2026-03-22T12:10:00",
+                               "disease":  "Trypanosomiasis",
+                               "health_score":  69,
+                               "duration_hours":  3.6,
+                               "location":  {
+                                                "lat":  -6.797,
+                                                "lng":  39.209
+                                            },
+                               "recommendation":  "Leptospirosis risk.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-063",
+                               "alert_time":  "2026-03-22T11:30:00",
+                               "disease":  "Mastitis",
+                               "health_score":  67,
+                               "duration_hours":  8.2,
+                               "location":  {
+                                                "lat":  -6.791,
+                                                "lng":  39.211
+                                            },
+                               "recommendation":  "Mastitis treatment.",
+                               "status":  "warning"
+                           },
+                           {
+                               "cow_id":  "COW-224",
+                               "alert_time":  "2026-03-22T10:45:00",
+                               "disease":  "Lameness_Hoof_Disease",
+                               "health_score":  72,
+                               "duration_hours":  4.1,
+                               "location":  {
+                                                "lat":  -6.795,
+                                                "lng":  39.206
+                                            },
+                               "recommendation":  "Johnes disease risk.",
+                               "status":  "warning"
+                           }
+                       ],
+    "herd_summary":  {
+                         "total":  247,
+                         "healthy":  233,
+                         "warning":  9,
+                         "critical":  5,
+                         "last_update":  "2026-03-22T17:00:00"
+                     },
+    "alert_history":  [
+                          {
+                              "timestamp":  "2026-03-22T14:30:00",
+                              "cow_id":  "COW-123",
+                              "disease":  "East_Coast_Fever",
+                              "severity":  "critical",
+                              "status":  "active"
+                          },
+                          {
+                              "timestamp":  "2026-03-22T13:00:00",
+                              "cow_id":  "COW-087",
+                              "disease":  "Foot_And_Mouth_Disease",
+                              "severity":  "critical",
+                              "status":  "active"
+                          },
+                          {
+                              "timestamp":  "2026-03-22T16:00:00",
+                              "cow_id":  "COW-045",
+                              "disease":  "East_Coast_Fever",
+                              "severity":  "warning",
+                              "status":  "monitoring"
+                          },
+                          {
+                              "timestamp":  "2026-03-21T19:15:00",
+                              "cow_id":  "COW-234",
+                              "disease":  "Trypanosomiasis",
+                              "severity":  "warning",
+                              "status":  "treated"
+                          },
+                          {
+                              "timestamp":  "2026-03-21T18:30:00",
+                              "cow_id":  "COW-145",
+                              "disease":  "Heat_Stress",
+                              "severity":  "warning",
+                              "status":  "treated"
+                          },
+                          {
+                              "timestamp":  "2026-03-21T17:45:00",
+                              "cow_id":  "COW-089",
+                              "disease":  "Foot_And_Mouth_Disease",
+                              "severity":  "critical",
+                              "status":  "active"
+                          },
+                          {
+                              "timestamp":  "2026-03-20T16:20:00",
+                              "cow_id":  "COW-156",
+                              "disease":  "Trypanosomiasis",
+                              "severity":  "critical",
+                              "status":  "monitoring"
+                          },
+                          {
+                              "timestamp":  "2026-03-20T15:00:00",
+                              "cow_id":  "COW-203",
+                              "disease":  "Mastitis",
+                              "severity":  "warning",
+                              "status":  "treated"
+                          },
+                          {
+                              "timestamp":  "2026-03-19T14:30:00",
+                              "cow_id":  "COW-167",
+                              "disease":  "Mastitis",
+                              "severity":  "warning",
+                              "status":  "monitoring"
+                          },
+                          {
+                              "timestamp":  "2026-03-19T13:15:00",
+                              "cow_id":  "COW-201",
+                              "disease":  "Lameness_Hoof_Disease",
+                              "severity":  "critical",
+                              "status":  "active"
+                          }
+                      ],
+    "disease_stats":  {
+                          "East_Coast_Fever":  2,
+                          "Trypanosomiasis":  4,
+                          "Foot_And_Mouth_Disease":  2,
+                          "Mastitis":  2,
+                          "Lameness_Hoof_Disease":  2,
+                          "Heat_Stress":  2
+                      },
+    "cow_positions":  [
+                          {
+                              "cow_id":  "COW-001",
+                              "lat":  -6.797181854033,
+                              "lng":  39.202510365789,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-002",
+                              "lat":  -6.796631315517,
+                              "lng":  39.205251853506,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-003",
+                              "lat":  -6.789741544169,
+                              "lng":  39.203473023411,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-004",
+                              "lat":  -6.795308230834,
+                              "lng":  39.205146427958,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-005",
+                              "lat":  -6.793595336254,
+                              "lng":  39.20761939227,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-006",
+                              "lat":  -6.789650978003,
+                              "lng":  39.20070637635,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-007",
+                              "lat":  -6.788456062921,
+                              "lng":  39.20794941028,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-008",
+                              "lat":  -6.798197747794,
+                              "lng":  39.214103042602,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-009",
+                              "lat":  -6.789200588357,
+                              "lng":  39.200882942761,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-010",
+                              "lat":  -6.797044774674,
+                              "lng":  39.218124255193,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-011",
+                              "lat":  -6.789671725719,
+                              "lng":  39.203727569125,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-012",
+                              "lat":  -6.793836006743,
+                              "lng":  39.211663205732,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-013",
+                              "lat":  -6.799920902783,
+                              "lng":  39.210714440416,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-014",
+                              "lat":  -6.785032821458,
+                              "lng":  39.207691473834,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-015",
+                              "lat":  -6.799473209716,
+                              "lng":  39.201020180183,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-016",
+                              "lat":  -6.787470872313,
+                              "lng":  39.202303527427,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-017",
+                              "lat":  -6.784551433513,
+                              "lng":  39.205792133578,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-018",
+                              "lat":  -6.797127070305,
+                              "lng":  39.20088996714,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-019",
+                              "lat":  -6.789681732287,
+                              "lng":  39.201015893762,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-020",
+                              "lat":  -6.785868353474,
+                              "lng":  39.212569272841,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-021",
+                              "lat":  -6.799734924501,
+                              "lng":  39.207303230505,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-022",
+                              "lat":  -6.798626783285,
+                              "lng":  39.214363494885,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-023",
+                              "lat":  -6.7907181284349996,
+                              "lng":  39.200240670489,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-024",
+                              "lat":  -6.791216410339,
+                              "lng":  39.21026992478,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-025",
+                              "lat":  -6.799820941817,
+                              "lng":  39.216576758538,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-026",
+                              "lat":  -6.79993851983,
+                              "lng":  39.201275461922,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-027",
+                              "lat":  -6.799309219336,
+                              "lng":  39.218270283955,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-028",
+                              "lat":  -6.790776124769,
+                              "lng":  39.207506658839,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-029",
+                              "lat":  -6.79911112369,
+                              "lng":  39.207455344585,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-030",
+                              "lat":  -6.791260986352,
+                              "lng":  39.215845725544,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-031",
+                              "lat":  -6.791986020148,
+                              "lng":  39.205947450691,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-032",
+                              "lat":  -6.788265221411,
+                              "lng":  39.214702103042,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-033",
+                              "lat":  -6.782366386783,
+                              "lng":  39.219153573569,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-034",
+                              "lat":  -6.785786000502,
+                              "lng":  39.203247256122,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-035",
+                              "lat":  -6.790956969974,
+                              "lng":  39.206664976825,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-036",
+                              "lat":  -6.797029017786,
+                              "lng":  39.202693871512,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-037",
+                              "lat":  -6.788166750766,
+                              "lng":  39.210256787543,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-038",
+                              "lat":  -6.784675539231,
+                              "lng":  39.213440865862,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-039",
+                              "lat":  -6.794210504589,
+                              "lng":  39.211041200269,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-040",
+                              "lat":  -6.786983353396,
+                              "lng":  39.200484340405,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-041",
+                              "lat":  -6.781418743153,
+                              "lng":  39.200542857917,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-042",
+                              "lat":  -6.794691125431,
+                              "lng":  39.200769609809,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-043",
+                              "lat":  -6.788153231641,
+                              "lng":  39.208444279595,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-044",
+                              "lat":  -6.780130306883,
+                              "lng":  39.202427866954,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-045",
+                              "lat":  -6.793573822879,
+                              "lng":  39.206476781166,
+                              "status":  "warning",
+                              "health_score":  59
+                          },
+                          {
+                              "cow_id":  "COW-046",
+                              "lat":  -6.783483441604,
+                              "lng":  39.200180845205,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-047",
+                              "lat":  -6.783190087184,
+                              "lng":  39.217917894096,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-048",
+                              "lat":  -6.781475606617,
+                              "lng":  39.216905764414,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-049",
+                              "lat":  -6.78909311987,
+                              "lng":  39.212689519083,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-050",
+                              "lat":  -6.79615382131,
+                              "lng":  39.205945283177,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-051",
+                              "lat":  -6.799408328337,
+                              "lng":  39.204616966613,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-052",
+                              "lat":  -6.780251465002,
+                              "lng":  39.215632742651,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-053",
+                              "lat":  -6.782332088008,
+                              "lng":  39.203734155457,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-054",
+                              "lat":  -6.78880026529,
+                              "lng":  39.211124213855,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-055",
+                              "lat":  -6.797561446893,
+                              "lng":  39.211963556116,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-056",
+                              "lat":  -6.782381456514,
+                              "lng":  39.208898283648,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-057",
+                              "lat":  -6.780724038948,
+                              "lng":  39.209272937015,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-058",
+                              "lat":  -6.781045110347,
+                              "lng":  39.216206733788,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-059",
+                              "lat":  -6.797853322773,
+                              "lng":  39.200056863464,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-060",
+                              "lat":  -6.781193993055,
+                              "lng":  39.214401994438,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-061",
+                              "lat":  -6.78818411074,
+                              "lng":  39.208000589669,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-062",
+                              "lat":  -6.781786247278,
+                              "lng":  39.219278021454,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-063",
+                              "lat":  -6.79654734481,
+                              "lng":  39.206677642123,
+                              "status":  "warning",
+                              "health_score":  73
+                          },
+                          {
+                              "cow_id":  "COW-064",
+                              "lat":  -6.787681370372,
+                              "lng":  39.218848646404,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-065",
+                              "lat":  -6.785053685003,
+                              "lng":  39.205610178106,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-066",
+                              "lat":  -6.789488118845,
+                              "lng":  39.216085840276,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-067",
+                              "lat":  -6.782239982589,
+                              "lng":  39.213288336645,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-068",
+                              "lat":  -6.794457499867,
+                              "lng":  39.204570217638,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-069",
+                              "lat":  -6.78719945229,
+                              "lng":  39.20163678201,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-070",
+                              "lat":  -6.783897213146,
+                              "lng":  39.217601857771,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-071",
+                              "lat":  -6.780932695298,
+                              "lng":  39.218861905047,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-072",
+                              "lat":  -6.78218472371,
+                              "lng":  39.21938384545,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-073",
+                              "lat":  -6.788249404499,
+                              "lng":  39.204224800386,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-074",
+                              "lat":  -6.789981979751,
+                              "lng":  39.214165888296,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-075",
+                              "lat":  -6.78387995382,
+                              "lng":  39.206957331424,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-076",
+                              "lat":  -6.785586334684,
+                              "lng":  39.204008574655,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-077",
+                              "lat":  -6.7842272339319996,
+                              "lng":  39.211634796072,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-078",
+                              "lat":  -6.781305114795,
+                              "lng":  39.201045989534,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-079",
+                              "lat":  -6.79571114471,
+                              "lng":  39.206273389126,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-080",
+                              "lat":  -6.794173349745,
+                              "lng":  39.205413205011,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-081",
+                              "lat":  -6.790599332485,
+                              "lng":  39.207349868336,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-082",
+                              "lat":  -6.78473184067,
+                              "lng":  39.213251324926,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-083",
+                              "lat":  -6.792885471272,
+                              "lng":  39.217131038707,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-084",
+                              "lat":  -6.796329943946,
+                              "lng":  39.218761285655,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-085",
+                              "lat":  -6.787743326364,
+                              "lng":  39.207741997162,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-086",
+                              "lat":  -6.798429406089,
+                              "lng":  39.209422453954,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-087",
+                              "lat":  -6.79375194445,
+                              "lng":  39.218386882394,
+                              "status":  "critical",
+                              "health_score":  37
+                          },
+                          {
+                              "cow_id":  "COW-088",
+                              "lat":  -6.782186322856,
+                              "lng":  39.200330020785,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-089",
+                              "lat":  -6.788395144003,
+                              "lng":  39.200372419497,
+                              "status":  "critical",
+                              "health_score":  25
+                          },
+                          {
+                              "cow_id":  "COW-090",
+                              "lat":  -6.791781496774,
+                              "lng":  39.213526421,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-091",
+                              "lat":  -6.780306747845,
+                              "lng":  39.205923945245,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-092",
+                              "lat":  -6.784955704783,
+                              "lng":  39.200617352734,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-093",
+                              "lat":  -6.786855142828,
+                              "lng":  39.20085188685,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-094",
+                              "lat":  -6.789562450745,
+                              "lng":  39.207299136588,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-095",
+                              "lat":  -6.795629776975,
+                              "lng":  39.212102710014,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-096",
+                              "lat":  -6.787890016701,
+                              "lng":  39.206438211569,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-097",
+                              "lat":  -6.798008790555,
+                              "lng":  39.202718261379,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-098",
+                              "lat":  -6.794182514182,
+                              "lng":  39.219578594705,
+                              "status":  "warning",
+                              "health_score":  72
+                          },
+                          {
+                              "cow_id":  "COW-099",
+                              "lat":  -6.79998696791,
+                              "lng":  39.211586990371,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-100",
+                              "lat":  -6.796891277347,
+                              "lng":  39.203663303332,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-101",
+                              "lat":  -6.797829174156,
+                              "lng":  39.218896025503,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-102",
+                              "lat":  -6.786884123668,
+                              "lng":  39.203976803899,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-103",
+                              "lat":  -6.786950555484,
+                              "lng":  39.217212378419,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-104",
+                              "lat":  -6.78769357161,
+                              "lng":  39.208425736739,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-105",
+                              "lat":  -6.796093120284,
+                              "lng":  39.215810506295,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-106",
+                              "lat":  -6.789249328593,
+                              "lng":  39.213443454119,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-107",
+                              "lat":  -6.786906448718,
+                              "lng":  39.219494872698,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-108",
+                              "lat":  -6.79548807686,
+                              "lng":  39.206227293781,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-109",
+                              "lat":  -6.783740478849,
+                              "lng":  39.213875766338,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-110",
+                              "lat":  -6.788214727244,
+                              "lng":  39.215031263127,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-111",
+                              "lat":  -6.780203827592,
+                              "lng":  39.21003613452,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-112",
+                              "lat":  -6.799172898931,
+                              "lng":  39.208266723411,
+                              "status":  "warning",
+                              "health_score":  72
+                          },
+                          {
+                              "cow_id":  "COW-113",
+                              "lat":  -6.796727081759,
+                              "lng":  39.211254346693,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-114",
+                              "lat":  -6.799963829992,
+                              "lng":  39.219060538783,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-115",
+                              "lat":  -6.793820652055,
+                              "lng":  39.209684781055,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-116",
+                              "lat":  -6.791719631931,
+                              "lng":  39.201910606102,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-117",
+                              "lat":  -6.784061423188,
+                              "lng":  39.209262360683,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-118",
+                              "lat":  -6.78120746322,
+                              "lng":  39.21001517137,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-119",
+                              "lat":  -6.781055302499,
+                              "lng":  39.217658902704,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-120",
+                              "lat":  -6.787203541914,
+                              "lng":  39.216856355181,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-121",
+                              "lat":  -6.793508010131,
+                              "lng":  39.201264171759,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-122",
+                              "lat":  -6.781905717934,
+                              "lng":  39.212510255981,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-123",
+                              "lat":  -6.788618016415,
+                              "lng":  39.203079778647,
+                              "status":  "critical",
+                              "health_score":  38
+                          },
+                          {
+                              "cow_id":  "COW-124",
+                              "lat":  -6.79731536528,
+                              "lng":  39.207477753166,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-125",
+                              "lat":  -6.799898595344,
+                              "lng":  39.213057381275,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-126",
+                              "lat":  -6.795291625222,
+                              "lng":  39.218332575196,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-127",
+                              "lat":  -6.78348436502,
+                              "lng":  39.207979153082,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-128",
+                              "lat":  -6.797422737869,
+                              "lng":  39.215846695945,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-129",
+                              "lat":  -6.78911317389,
+                              "lng":  39.201003635629,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-130",
+                              "lat":  -6.786979847116,
+                              "lng":  39.201882403568,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-131",
+                              "lat":  -6.784265620636,
+                              "lng":  39.210476460154,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-132",
+                              "lat":  -6.781975131446,
+                              "lng":  39.213544180139,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-133",
+                              "lat":  -6.792955282141,
+                              "lng":  39.208085065879,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-134",
+                              "lat":  -6.784097077578,
+                              "lng":  39.216898384484,
+                              "status":  "warning",
+                              "health_score":  72
+                          },
+                          {
+                              "cow_id":  "COW-135",
+                              "lat":  -6.783775694474,
+                              "lng":  39.213253942092,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-136",
+                              "lat":  -6.784045571174,
+                              "lng":  39.218691132124,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-137",
+                              "lat":  -6.796265903281,
+                              "lng":  39.214236322723,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-138",
+                              "lat":  -6.783873781005,
+                              "lng":  39.216280823106,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-139",
+                              "lat":  -6.781864122675,
+                              "lng":  39.203914727738,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-140",
+                              "lat":  -6.783587787153,
+                              "lng":  39.207207455955,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-141",
+                              "lat":  -6.78163136093,
+                              "lng":  39.218361830701,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-142",
+                              "lat":  -6.783064037824,
+                              "lng":  39.206950255356,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-143",
+                              "lat":  -6.792208884085,
+                              "lng":  39.202076536101,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-144",
+                              "lat":  -6.797362033109,
+                              "lng":  39.217663656919,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-145",
+                              "lat":  -6.780632012347,
+                              "lng":  39.200612712559,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-146",
+                              "lat":  -6.78686566722,
+                              "lng":  39.206352956605,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-147",
+                              "lat":  -6.796015705073,
+                              "lng":  39.214932397285,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-148",
+                              "lat":  -6.796936826947,
+                              "lng":  39.209286056165,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-149",
+                              "lat":  -6.7887185068,
+                              "lng":  39.219608160369,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-150",
+                              "lat":  -6.794479210588,
+                              "lng":  39.219888991229,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-151",
+                              "lat":  -6.787621108791,
+                              "lng":  39.210632505012,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-152",
+                              "lat":  -6.79433209528,
+                              "lng":  39.217534283352,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-153",
+                              "lat":  -6.782366547623,
+                              "lng":  39.219288343349,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-154",
+                              "lat":  -6.795216685494,
+                              "lng":  39.20816331291,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-155",
+                              "lat":  -6.78255541104,
+                              "lng":  39.201096129828,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-156",
+                              "lat":  -6.790921181809,
+                              "lng":  39.216758231342,
+                              "status":  "critical",
+                              "health_score":  36
+                          },
+                          {
+                              "cow_id":  "COW-157",
+                              "lat":  -6.782203566498,
+                              "lng":  39.205001544545,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-158",
+                              "lat":  -6.797175278038,
+                              "lng":  39.21242791792,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-159",
+                              "lat":  -6.790805883152,
+                              "lng":  39.215305466016,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-160",
+                              "lat":  -6.786448705767,
+                              "lng":  39.205654468977,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-161",
+                              "lat":  -6.797194344037,
+                              "lng":  39.202270326504,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-162",
+                              "lat":  -6.790116251265,
+                              "lng":  39.210259075682,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-163",
+                              "lat":  -6.790630100607,
+                              "lng":  39.213700082932,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-164",
+                              "lat":  -6.787455785185,
+                              "lng":  39.215500880403,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-165",
+                              "lat":  -6.783710932882,
+                              "lng":  39.219200980421,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-166",
+                              "lat":  -6.794302092518,
+                              "lng":  39.205618584093,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-167",
+                              "lat":  -6.788926584958,
+                              "lng":  39.202202675008,
+                              "status":  "warning",
+                              "health_score":  64
+                          },
+                          {
+                              "cow_id":  "COW-168",
+                              "lat":  -6.781472473499,
+                              "lng":  39.20772435591,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-169",
+                              "lat":  -6.787932318732,
+                              "lng":  39.209554169248,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-170",
+                              "lat":  -6.791397448746,
+                              "lng":  39.216473787872,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-171",
+                              "lat":  -6.790539220753,
+                              "lng":  39.204082158145,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-172",
+                              "lat":  -6.781038408252,
+                              "lng":  39.201977658543,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-173",
+                              "lat":  -6.78557294885,
+                              "lng":  39.207560840225,
+                              "status":  "healthy",
+                              "health_score":  85
+                          },
+                          {
+                              "cow_id":  "COW-174",
+                              "lat":  -6.790458486104,
+                              "lng":  39.219708918799,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-175",
+                              "lat":  -6.787410318659,
+                              "lng":  39.205252218687,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-176",
+                              "lat":  -6.789502842123,
+                              "lng":  39.206535654844,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-177",
+                              "lat":  -6.794494025705,
+                              "lng":  39.203496209366,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-178",
+                              "lat":  -6.799114151802,
+                              "lng":  39.20247787919,
+                              "status":  "warning",
+                              "health_score":  66
+                          },
+                          {
+                              "cow_id":  "COW-179",
+                              "lat":  -6.795507834039,
+                              "lng":  39.204278129462,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-180",
+                              "lat":  -6.792699901812,
+                              "lng":  39.217816067467,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-181",
+                              "lat":  -6.791173435185,
+                              "lng":  39.200767348139,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-182",
+                              "lat":  -6.799150388129,
+                              "lng":  39.203083435569,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-183",
+                              "lat":  -6.786569261116,
+                              "lng":  39.21732747537,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-184",
+                              "lat":  -6.799123902032,
+                              "lng":  39.211270856332,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-185",
+                              "lat":  -6.782647127808,
+                              "lng":  39.201531901146,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-186",
+                              "lat":  -6.780208219383,
+                              "lng":  39.20593784516,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-187",
+                              "lat":  -6.794613217457,
+                              "lng":  39.201570523391,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-188",
+                              "lat":  -6.795022350408,
+                              "lng":  39.203096576958,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-189",
+                              "lat":  -6.787458064588,
+                              "lng":  39.208574931048,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-190",
+                              "lat":  -6.789817919596,
+                              "lng":  39.214469425787,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-191",
+                              "lat":  -6.788652984187,
+                              "lng":  39.207126952963,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-192",
+                              "lat":  -6.789867852288,
+                              "lng":  39.200714949081,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-193",
+                              "lat":  -6.79416814665,
+                              "lng":  39.211740069469,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-194",
+                              "lat":  -6.781918058117,
+                              "lng":  39.217066418993,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-195",
+                              "lat":  -6.783996384379,
+                              "lng":  39.204629876327,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-196",
+                              "lat":  -6.788370861946,
+                              "lng":  39.203532976007,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-197",
+                              "lat":  -6.799041962241,
+                              "lng":  39.204700385344,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-198",
+                              "lat":  -6.787926166629,
+                              "lng":  39.201913315645,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-199",
+                              "lat":  -6.782313607969,
+                              "lng":  39.203848915223,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-200",
+                              "lat":  -6.795751283446,
+                              "lng":  39.208307676459,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-201",
+                              "lat":  -6.790185556696,
+                              "lng":  39.20324865848,
+                              "status":  "critical",
+                              "health_score":  34
+                          },
+                          {
+                              "cow_id":  "COW-202",
+                              "lat":  -6.780476207203,
+                              "lng":  39.209529082156,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-203",
+                              "lat":  -6.791687028888,
+                              "lng":  39.20722072448,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-204",
+                              "lat":  -6.79644781445,
+                              "lng":  39.213959927267,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-205",
+                              "lat":  -6.799696645895,
+                              "lng":  39.207304840659,
+                              "status":  "warning",
+                              "health_score":  70
+                          },
+                          {
+                              "cow_id":  "COW-206",
+                              "lat":  -6.786189665071,
+                              "lng":  39.208974033971,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-207",
+                              "lat":  -6.799247774528,
+                              "lng":  39.200912797358,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-208",
+                              "lat":  -6.79934169909,
+                              "lng":  39.209224042645,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-209",
+                              "lat":  -6.780640755222,
+                              "lng":  39.219273182442,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-210",
+                              "lat":  -6.786500771319,
+                              "lng":  39.212445755681,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-211",
+                              "lat":  -6.798729200521,
+                              "lng":  39.201583136796,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-212",
+                              "lat":  -6.792339721402,
+                              "lng":  39.208267498579,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-213",
+                              "lat":  -6.793649870108,
+                              "lng":  39.216479822824,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-214",
+                              "lat":  -6.791918550335,
+                              "lng":  39.203316166943,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-215",
+                              "lat":  -6.799870974021,
+                              "lng":  39.217405852209,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-216",
+                              "lat":  -6.795857491389,
+                              "lng":  39.211770479266,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-217",
+                              "lat":  -6.788258560322,
+                              "lng":  39.203876057101,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-218",
+                              "lat":  -6.780795929451,
+                              "lng":  39.203496491082,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-219",
+                              "lat":  -6.790533450521,
+                              "lng":  39.209156142394,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-220",
+                              "lat":  -6.786910990862,
+                              "lng":  39.200164548019,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-221",
+                              "lat":  -6.781069733948,
+                              "lng":  39.21481374243,
+                              "status":  "healthy",
+                              "health_score":  88
+                          },
+                          {
+                              "cow_id":  "COW-222",
+                              "lat":  -6.796049081793,
+                              "lng":  39.202281386071,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-223",
+                              "lat":  -6.78923461732,
+                              "lng":  39.212643075507,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-224",
+                              "lat":  -6.789313656115,
+                              "lng":  39.207460205037,
+                              "status":  "warning",
+                              "health_score":  74
+                          },
+                          {
+                              "cow_id":  "COW-225",
+                              "lat":  -6.79663409354,
+                              "lng":  39.212670775807,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-226",
+                              "lat":  -6.791270296486,
+                              "lng":  39.200529274931,
+                              "status":  "healthy",
+                              "health_score":  94
+                          },
+                          {
+                              "cow_id":  "COW-227",
+                              "lat":  -6.780971417632,
+                              "lng":  39.215216736167,
+                              "status":  "healthy",
+                              "health_score":  90
+                          },
+                          {
+                              "cow_id":  "COW-228",
+                              "lat":  -6.789394837669,
+                              "lng":  39.201757789004,
+                              "status":  "healthy",
+                              "health_score":  86
+                          },
+                          {
+                              "cow_id":  "COW-229",
+                              "lat":  -6.798008847394,
+                              "lng":  39.20206672893,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-230",
+                              "lat":  -6.78396248609,
+                              "lng":  39.218193729119,
+                              "status":  "healthy",
+                              "health_score":  95
+                          },
+                          {
+                              "cow_id":  "COW-231",
+                              "lat":  -6.780206855321,
+                              "lng":  39.213261120754,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-232",
+                              "lat":  -6.795155105542,
+                              "lng":  39.209151183613,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-233",
+                              "lat":  -6.798462717272,
+                              "lng":  39.216178107772,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-234",
+                              "lat":  -6.781636332395,
+                              "lng":  39.213377125931,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-235",
+                              "lat":  -6.784428867094,
+                              "lng":  39.201055095792,
+                              "status":  "healthy",
+                              "health_score":  96
+                          },
+                          {
+                              "cow_id":  "COW-236",
+                              "lat":  -6.797619329895,
+                              "lng":  39.215838164089,
+                              "status":  "healthy",
+                              "health_score":  93
+                          },
+                          {
+                              "cow_id":  "COW-237",
+                              "lat":  -6.790201751315,
+                              "lng":  39.200736845965,
+                              "status":  "healthy",
+                              "health_score":  89
+                          },
+                          {
+                              "cow_id":  "COW-238",
+                              "lat":  -6.797793574602,
+                              "lng":  39.214060426771,
+                              "status":  "healthy",
+                              "health_score":  87
+                          },
+                          {
+                              "cow_id":  "COW-239",
+                              "lat":  -6.797246803463,
+                              "lng":  39.208325103721,
+                              "status":  "healthy",
+                              "health_score":  84
+                          },
+                          {
+                              "cow_id":  "COW-240",
+                              "lat":  -6.793794729781,
+                              "lng":  39.201959765601,
+                              "status":  "healthy",
+                              "health_score":  91
+                          },
+                          {
+                              "cow_id":  "COW-241",
+                              "lat":  -6.785709855242,
+                              "lng":  39.214727868771,
+                              "status":  "healthy",
+                              "health_score":  80
+                          },
+                          {
+                              "cow_id":  "COW-242",
+                              "lat":  -6.780074014105,
+                              "lng":  39.210893199207,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-243",
+                              "lat":  -6.783821063658,
+                              "lng":  39.218521012002,
+                              "status":  "healthy",
+                              "health_score":  92
+                          },
+                          {
+                              "cow_id":  "COW-244",
+                              "lat":  -6.790905794097,
+                              "lng":  39.207192420786,
+                              "status":  "healthy",
+                              "health_score":  82
+                          },
+                          {
+                              "cow_id":  "COW-245",
+                              "lat":  -6.783306275701,
+                              "lng":  39.200664914763,
+                              "status":  "healthy",
+                              "health_score":  83
+                          },
+                          {
+                              "cow_id":  "COW-246",
+                              "lat":  -6.791624700581,
+                              "lng":  39.215034029426,
+                              "status":  "healthy",
+                              "health_score":  81
+                          },
+                          {
+                              "cow_id":  "COW-247",
+                              "lat":  -6.787846153485,
+                              "lng":  39.219610482501,
+                              "status":  "healthy",
+                              "health_score":  80
+                          }
+                      ]
+}

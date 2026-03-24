@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animalytics - Farm Monitor</title>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8WcY8nBNNFu9x0xP7u8q5A0zY4xX8gA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="app-title">
+                    <img src="logo-cow.png" alt="Animalytics cow logo" class="app-logo-mark">
+                    <span class="app-logo-word">Animalytics</span>
+                </h1>
+                <span class="last-update">Last update: <span id="last-update-time">--:--</span></span>
+            </div>
+            <div class="header-right">
+                <div class="notification-badge" id="notification-badge">
+                    <span id="notification-count">0</span>
+                    <span class="notification-label">Alerts</span>
+                </div>
+                <div class="connection-status" id="connection-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Connected</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-view="home"><i class="fa-solid fa-house"></i> Home</button>
+            <button class="nav-tab" data-view="map"><i class="fa-solid fa-map-location-dot"></i> Map</button>
+            <button class="nav-tab" data-view="analytics"><i class="fa-solid fa-chart-column"></i> Analytics</button>
+            <button class="nav-tab" data-view="workers"><i class="fa-solid fa-people-group"></i> Workers</button>
+            <button class="nav-tab" data-view="assistant"><i class="fa-solid fa-robot"></i> Assistant</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- HOME VIEW -->
+            <div class="view active" id="home-view">
+                
+                <!-- Urgent Actions Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Urgent Actions</h2>
+                    <div id="critical-alerts-container" class="alerts-container">
+                        <div class="empty-state">No critical alerts</div>
+                    </div>
+                </section>
+
+                <!-- Early Warnings Section -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-bell"></i> Early Warnings</h2>
+                    <div id="early-warnings-container" class="alerts-container">
+                        <div class="empty-state">No early warnings</div>
+                    </div>
+                </section>
+
+                <!-- Herd Status Summary -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-heart-pulse"></i> Herd Status</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Cattle</div>
+                            <div class="stat-value" id="total-cattle">247</div>
+                        </div>
+                        <div class="stat-card stat-healthy">
+                            <div class="stat-label">Healthy</div>
+                            <div class="stat-value" id="healthy-cattle">240</div>
+                            <div class="stat-percent" id="healthy-percent">97%</div>
+                        </div>
+                        <div class="stat-card stat-warning">
+                            <div class="stat-label">Warning</div>
+                            <div class="stat-value" id="warning-cattle">5</div>
+                            <div class="stat-percent" id="warning-percent">2%</div>
+                        </div>
+                        <div class="stat-card stat-critical">
+                            <div class="stat-label">Critical</div>
+                            <div class="stat-value" id="critical-cattle">2</div>
+                            <div class="stat-percent" id="critical-percent">1%</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- MAP VIEW -->
+            <div class="view" id="map-view">
+                <div class="map-controls">
+                    <div class="control-group">
+                        <label>Filter:</label>
+                        <select id="map-filter">
+                            <option value="all">All Cattle</option>
+                            <option value="critical">Critical Only</option>
+                            <option value="warning">Warnings Only</option>
+                            <option value="healthy">Healthy Only</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="show-workers" checked>
+                            Show Workers
+                        </label>
+                    </div>
+                </div>
+
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #059669"></span>
+                        <span>Healthy</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #d97706"></span>
+                        <span>Warning</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #dc2626"></span>
+                        <span>Critical</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #3b82f6"></span>
+                        <span>Worker</span>
+                    </div>
+                </div>
+
+                <div id="map-canvas"></div>
+
+                <!-- Cow Detail Panel -->
+                <div class="detail-panel" id="cow-detail-panel" style="display: none;">
+                    <div class="detail-header">
+                        <h3 id="detail-cow-id">COW-123</h3>
+                        <button class="close-btn" id="close-detail">×</button>
+                    </div>
+                    <div class="detail-body">
+                        <div class="detail-row">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value" id="detail-status">Critical</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Health Score:</span>
+                            <span class="detail-value" id="detail-health-score">28/100</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Disease:</span>
+                            <span class="detail-value" id="detail-disease">East Coast Fever</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Duration:</span>
+                            <span class="detail-value" id="detail-duration">12.5 hours</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Location:</span>
+                            <span class="detail-value" id="detail-location">-6.7924, 39.2083</span>
+                        </div>
+                        <div class="detail-recommendation" id="detail-recommendation">
+                            Call veterinarian immediately. Isolate cow.
+                        </div>
+                        <div class="detail-actions">
+                            <button class="btn btn-primary" id="upload-photo-btn">Upload Photo for Diagnosis</button>
+                            <button class="btn btn-secondary" id="mark-treated-btn">Mark as Treated</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANALYTICS VIEW -->
+            <div class="view" id="analytics-view">
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-sack-dollar"></i> Cost Savings This Month</h2>
+                    <div class="cost-savings-grid">
+                        <div class="savings-card">
+                            <div class="savings-label">Early Treatments</div>
+                            <div class="savings-value" id="early-treatments">0 cows</div>
+                            <div class="savings-amount" id="early-treatment-cost">$0</div>
+                        </div>
+                        <div class="savings-card">
+                            <div class="savings-label">Late Treatments Prevented</div>
+                            <div class="savings-value" id="late-prevented">0 cows</div>
+                            <div class="savings-amount savings-highlight" id="late-treatment-saved">$0 saved</div>
+                        </div>
+                        <div class="savings-card">
+                            <div class="savings-label">Deaths Prevented</div>
+                            <div class="savings-value" id="deaths-prevented">0 cows</div>
+                            <div class="savings-amount savings-highlight" id="death-cost-saved">$0 saved</div>
+                        </div>
+                        <div class="savings-card savings-total">
+                            <div class="savings-label">Total Savings</div>
+                            <div class="savings-amount-large" id="total-saved">$0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-heart-pulse"></i> Herd Health Overview</h2>
+                    <div class="analytics-grid">
+                        <div class="chart-container analytics-card">
+                            <canvas id="health-pie-chart"></canvas>
+                        </div>
+                        <div class="health-stats-box">
+                            <div class="stat-item">
+                                <div class="stat-icon healthy"><i class="fa-solid fa-check-circle"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-label">Healthy</div>
+                                    <div class="stat-value" id="stat-healthy">0</div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-label">At Risk</div>
+                                    <div class="stat-value" id="stat-warning">0</div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon critical"><i class="fa-solid fa-circle-xmark"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-label">Critical</div>
+                                    <div class="stat-value" id="stat-critical">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-chart-column"></i> Disease Distribution</h2>
+                    <div class="chart-container analytics-card" style="height: 320px;">
+                        <canvas id="disease-bar-chart"></canvas>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Treatment Effectiveness</h2>
+                    <div class="chart-container analytics-card" style="height: 270px;">
+                        <canvas id="treatment-chart"></canvas>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Alert History (Last 7 Days)</h2>
+                    <div id="alert-history-container" class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Cow ID</th>
+                                    <th>Disease</th>
+                                    <th>Severity</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="alert-history-body">
+                                <tr>
+                                    <td colspan="5" class="empty-state">No alert history</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- WORKERS VIEW -->
+            <div class="view" id="workers-view">
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-helmet-safety"></i> Active Workers</h2>
+                    <div class="workers-grid" id="workers-grid">
+                        <div class="empty-state">Loading workers...</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-list-check"></i> Task Queue</h2>
+                    <div class="task-queue" id="task-queue">
+                        <div class="empty-state">No pending tasks</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ASSISTANT VIEW -->
+            <div class="view" id="assistant-view">
+                <section class="section">
+                    <h2 class="section-title"><i class="fa-solid fa-robot"></i> Animalytics Farm Assistant</h2>
+                    <p class="assistant-subtitle">Chat with AI for farm guidance, treatment advice, and image-based assessment in one place.</p>
+
+                    <div class="assistant-chat-shell">
+                        <div class="assistant-chat-topbar">
+                            <div class="assistant-topbar-left">
+                                <span class="assistant-top-avatar"><i class="fa-solid fa-seedling"></i></span>
+                                <div>
+                                    <div class="assistant-top-title">Farm AI</div>
+                                    <div class="assistant-top-subtitle">Online</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm" id="assistant-clear-chat-btn"><i class="fa-solid fa-trash-can"></i> Clear Chat</button>
+                        </div>
+
+                        <div id="assistant-chat-log" class="assistant-chat-log">
+                            <div class="assistant-message assistant-bot">
+                                <div class="assistant-avatar"><i class="fa-solid fa-robot"></i></div>
+                                <div class="assistant-bubble-wrap">
+                                    <div class="assistant-bubble">Hello. I am your farm AI assistant. Ask a question or attach a cow photo to start.</div>
+                                    <div class="assistant-message-meta">Farm AI · just now</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="assistant-upload-row">
+                            <input type="file" id="assistant-image-input" accept="image/*" style="display: none;">
+                            <button class="btn btn-secondary" id="assistant-attach-btn"><i class="fa-solid fa-paperclip"></i> Attach</button>
+                            <span id="assistant-image-name" class="assistant-image-name">No image selected</span>
+                            <button class="btn btn-secondary" id="assistant-clear-image-btn"><i class="fa-solid fa-xmark"></i> Clear</button>
+                        </div>
+
+                        <div class="assistant-input-row">
+                            <textarea id="assistant-chat-input" class="assistant-chat-input" rows="3" placeholder="Ask about cattle health, treatment steps, worker dispatch, or upload a photo..."></textarea>
+                            <button class="btn btn-primary" id="assistant-send-btn"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                        </div>
+
+                        <div id="assistant-chat-status" class="assistant-chat-status"></div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Photo Upload Modal -->
+    <div class="modal" id="photo-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-camera"></i> AI Photo Diagnosis</h3>
+                <button class="close-btn" id="close-photo-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="photo-input" accept="image/*" style="display: none;">
+                    <label for="photo-input" class="upload-label">
+                        <div class="upload-icon"><i class="fa-solid fa-camera"></i></div>
+                        <div class="upload-text">Click to upload cow photo</div>
+                        <div class="upload-hint">JPG, PNG up to 10MB</div>
+                    </label>
+                </div>
+                <div id="photo-preview" style="display: none;">
+                    <img id="preview-image" src="" alt="Preview">
+                    <button class="btn btn-primary" id="analyze-photo-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Analyze with AI</button>
+                </div>
+                <div id="diagnosis-result" class="diagnosis-result" style="display: none;">
+                    <h4>Diagnosis Result:</h4>
+                    <div id="diagnosis-text"></div>
+                </div>
+                <div id="diagnosis-loading" class="diagnosis-loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing image with AI...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
+    ></script>
+    <script src="js/map.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/gemini.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
