@@ -13,3 +13,7 @@ Animalytics is a farm monitoring dashboard built to support day-to-day cattle he
 ## Architecture Diagram
 
 ![Animalytics Project Architecture](image.png)
+
+## Block Diagram (Working Principles)
+
+![Animalytics Block Diagram](Screenshot%202026-03-13%20171314.png)
