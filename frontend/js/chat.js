@@ -87,20 +87,7 @@ async function sendAssistantMessage() {
             payload.image_mime_type = assistantState.imageFile.type;
         }
 
-        const response = await fetch(`${window.API_BASE}/gemini-chat`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-            const errorText = result.error || 'Failed to get AI response.';
-            appendAssistantMessage('model', `Error: ${errorText}`);
-            setAssistantStatus('Request failed. Please try again.');
-            return;
-        }
+        const result = await api.geminiChat(payload);
 
         assistantState.history.push({ role: 'user', text: userMessage });
         assistantState.history.push({ role: 'model', text: result.reply });

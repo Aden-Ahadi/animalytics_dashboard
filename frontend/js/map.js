@@ -125,8 +125,7 @@ function drawRanchBase() {
 
 async function loadMapData() {
     try {
-        const response = await fetch(`${window.API_BASE}/map-data`);
-        const data = await response.json();
+        const data = await api.getMapData();
         cows = data.cows || [];
         workers = data.workers || [];
     } catch (error) {
@@ -270,23 +269,22 @@ function isValidCoordinate(lat, lng) {
 
 async function showCowDetails(cowId) {
     try {
-        const response = await fetch(`${window.API_BASE}/cow/${cowId}`);
-        const cow = await response.json();
-        
+        const cow = await api.getCow(cowId);
+
         document.getElementById('detail-cow-id').textContent = cow.cow_id;
         document.getElementById('detail-status').textContent = cow.status || 'Unknown';
-        document.getElementById('detail-health-score').textContent = 
+        document.getElementById('detail-health-score').textContent =
             `${cow.health_score || 0}/100`;
-        document.getElementById('detail-disease').textContent = 
+        document.getElementById('detail-disease').textContent =
             cow.disease || 'No diagnosis';
-        document.getElementById('detail-duration').textContent = 
+        document.getElementById('detail-duration').textContent =
             `${cow.duration_hours || 0} hours`;
-        document.getElementById('detail-location').textContent = 
+        document.getElementById('detail-location').textContent =
             `${cow.location?.lat?.toFixed(4)}, ${cow.location?.lng?.toFixed(4)}`;
-        document.getElementById('detail-recommendation').textContent = 
+        document.getElementById('detail-recommendation').textContent =
             cow.recommendation || 'Monitor closely.';
-        
-        window.selectedCowId = cowId;
+
+        if (window.setSelectedCow) window.setSelectedCow(cowId);
         setAnimalFocusMode(true);
         document.getElementById('cow-detail-panel').style.display = 'block';
     } catch (error) {

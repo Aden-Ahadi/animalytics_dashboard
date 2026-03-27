@@ -44,24 +44,12 @@ async function analyzePhoto() {
         const formData = new FormData();
         formData.append('image', file);
         formData.append('cow_id', window.selectedCowId || 'Unknown');
-        
-        const response = await fetch(`${window.API_BASE}/diagnose-photo`, {
-            method: 'POST',
-            body: formData
-        });
-        
-        const result = await response.json();
-        
-        // Hide loading
+
+        const result = await api.diagnosePhoto(formData);
+
         document.getElementById('diagnosis-loading').style.display = 'none';
-        
-        if (result.success) {
-            // Show result
-            document.getElementById('diagnosis-text').textContent = result.diagnosis;
-            document.getElementById('diagnosis-result').style.display = 'block';
-        } else {
-            alert('Error: ' + (result.error || 'Unknown error'));
-        }
+        document.getElementById('diagnosis-text').textContent = result.diagnosis;
+        document.getElementById('diagnosis-result').style.display = 'block';
     } catch (error) {
         document.getElementById('diagnosis-loading').style.display = 'none';
         alert('Error analyzing photo: ' + error.message);

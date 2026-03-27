@@ -26,6 +26,29 @@ GEMINI_FALLBACK_MODELS = [
 ]
 GEMINI_API_URL_TEMPLATE = 'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
 
+APPROVED_DISEASES = [
+    'East_Coast_Fever',
+    'Trypanosomiasis',
+    'Foot_And_Mouth_Disease',
+    'Mastitis',
+    'Lameness_Hoof_Disease',
+    'Heat_Stress'
+]
+
+DISEASE_ALIASES = {
+    'FMD': 'Foot_And_Mouth_Disease',
+    'Foot and Mouth Disease': 'Foot_And_Mouth_Disease',
+    'Lameness': 'Lameness_Hoof_Disease',
+    'Hoof_Disease': 'Lameness_Hoof_Disease',
+    'HeatStress': 'Heat_Stress'
+}
+
+STATIC_WORKERS = [
+    {"id": "worker-1", "name": "Worker A", "lat": -6.7920, "lng": 39.2080, "status": "available"},
+    {"id": "worker-2", "name": "Worker B", "lat": -6.7930, "lng": 39.2090, "status": "assigned", "assigned_to": "COW-123"},
+    {"id": "worker-3", "name": "Worker C", "lat": -6.7910, "lng": 39.2070, "status": "available"}
+]
+
 
 def call_gemini_with_fallback(gemini_request):
     """Call Gemini with model fallback for unavailable or rate-limited models."""
@@ -164,48 +187,22 @@ def get_map_data():
     data = load_data()
     return jsonify({
         "cows": data['cow_positions'],
-        "workers": [
-            {
-                "id": "worker-1",
-                "name": "Worker A",
-                "lat": -6.7920,
-                "lng": 39.2080,
-                "status": "available"
-            },
-            {
-                "id": "worker-2",
-                "name": "Worker B",
-                "lat": -6.7930,
-                "lng": 39.2090,
-                "status": "assigned",
-                "assigned_to": "COW-123"
-            },
-            {
-                "id": "worker-3",
-                "name": "Worker C",
-                "lat": -6.7910,
-                "lng": 39.2070,
-                "status": "available"
-            }
-        ]
+        "workers": STATIC_WORKERS
     })
 
 @app.route('/api/cow/<cow_id>')
 def get_cow_details(cow_id):
     """Get detailed info for specific cow"""
     data = load_data()
-    
-    # Check if in critical alerts
+
     for alert in data['critical_alerts']:
         if alert['cow_id'] == cow_id:
             return jsonify(alert)
-    
-    # Check if in early warnings
+
     for alert in data['early_warnings']:
         if alert['cow_id'] == cow_id:
             return jsonify(alert)
-    
-    # Find in cow positions
+
     for cow in data['cow_positions']:
         if cow['cow_id'] == cow_id:
             return jsonify({
@@ -215,55 +212,36 @@ def get_cow_details(cow_id):
                 "health_score": cow.get('health_score', 85),
                 "last_update": datetime.now().isoformat()
             })
-    
+
     return jsonify({"error": "Cow not found"}), 404
 
 @app.route('/api/analytics')
 def get_analytics():
     """Get analytics data"""
     data = load_data()
-    approved_diseases = [
-        'East_Coast_Fever',
-        'Trypanosomiasis',
-        'Foot_And_Mouth_Disease',
-        'Mastitis',
-        'Lameness_Hoof_Disease',
-        'Heat_Stress'
-    ]
-    disease_aliases = {
-        'FMD': 'Foot_And_Mouth_Disease',
-        'Foot and Mouth Disease': 'Foot_And_Mouth_Disease',
-        'Lameness': 'Lameness_Hoof_Disease',
-        'Hoof_Disease': 'Lameness_Hoof_Disease',
-        'HeatStress': 'Heat_Stress'
-    }
-    
-    # Calculate herd status
+
     herd_summary = data.get('herd_summary') or {}
     healthy = herd_summary.get('healthy')
     warning = herd_summary.get('warning')
     critical = herd_summary.get('critical')
 
-    # Fallback to derived values if summary is missing
     if healthy is None:
         healthy = len([a for a in data.get('animals', []) if a.get('status') == 'healthy'])
     if warning is None:
         warning = len(data.get('early_warnings', []))
     if critical is None:
         critical = len(data.get('critical_alerts', []))
-    
-    # Disease distribution (restricted to the approved catalog)
-    disease_counts = {name: 0 for name in approved_diseases}
+
+    disease_counts = {name: 0 for name in APPROVED_DISEASES}
     for alert in data.get('critical_alerts', []) + data.get('early_warnings', []):
         raw_disease = (alert.get('disease') or '').strip()
-        disease = disease_aliases.get(raw_disease, raw_disease)
+        disease = DISEASE_ALIASES.get(raw_disease, raw_disease)
         if disease in disease_counts:
             disease_counts[disease] += 1
-    
-    # Cost savings (mock calculation)
+
     early_treatments = len(data['early_warnings'])
     prevented_deaths = len(data['critical_alerts'])
-    
+
     savings = {
         "early_treatments": early_treatments,
         "early_treatment_cost": early_treatments * 12,
@@ -272,7 +250,7 @@ def get_analytics():
         "death_cost_saved": prevented_deaths * 400,
         "total_saved": (early_treatments * (50 - 12)) + (prevented_deaths * 400)
     }
-    
+
     return jsonify({
         "herd_status": {
             "healthy": healthy,
@@ -294,10 +272,9 @@ def diagnose_photo():
                 "error": "Gemini API key not configured. Set GEMINI_API_KEY environment variable."
             }), 500
 
-        # Get image data
         if 'image' not in request.files:
             return jsonify({"error": "No image provided"}), 400
-        
+
         image_file = request.files['image']
         cow_id = request.form.get('cow_id', 'Unknown')
         mime_type = (image_file.mimetype or '').lower()
@@ -307,11 +284,9 @@ def diagnose_photo():
                 "success": False,
                 "error": "Invalid file type. Please upload an image."
             }), 400
-        
-        # Read image as base64
+
         image_data = base64.b64encode(image_file.read()).decode('utf-8')
-        
-        # Prepare Gemini request
+
         prompt = """You are a veterinary AI assistant for East African cattle.
 Analyze this photo and identify potential health issues.
 
@@ -345,7 +320,7 @@ Be concise, practical, and focus on actionable advice for farmers."""
                 ]
             }]
         }
-        
+
         gemini_call = call_gemini_with_fallback(gemini_request)
 
         if not gemini_call['success']:
@@ -369,7 +344,7 @@ Be concise, practical, and focus on actionable advice for farmers."""
             "diagnosis": diagnosis_text,
             "timestamp": datetime.now().isoformat()
         })
-            
+
     except Exception as e:
         return jsonify({
             "success": False,
@@ -479,12 +454,13 @@ Be direct and conversational - speak to a busy farmer, not a textbook."""
 @app.route('/api/assign-worker', methods=['POST'])
 def assign_worker():
     """Assign worker to a cow alert"""
-    data = request.json
-    worker_id = data.get('worker_id')
-    cow_id = data.get('cow_id')
-    
-    # In real system, this would update worker assignments
-    # For demo, just return success
+    body = request.get_json(silent=True) or {}
+    worker_id = (body.get('worker_id') or '').strip()
+    cow_id = (body.get('cow_id') or '').strip()
+
+    if not worker_id or not cow_id:
+        return jsonify({"success": False, "error": "worker_id and cow_id are required"}), 400
+
     return jsonify({
         "success": True,
         "message": f"Worker {worker_id} assigned to {cow_id}",
@@ -494,35 +470,34 @@ def assign_worker():
 @app.route('/api/mark-treated', methods=['POST'])
 def mark_treated():
     """Mark a cow as treated"""
-    data = request.json
-    cow_id = data.get('cow_id')
-    
-    # Load current data
+    body = request.get_json(silent=True) or {}
+    cow_id = (body.get('cow_id') or '').strip()
+
+    if not cow_id:
+        return jsonify({"success": False, "error": "cow_id is required"}), 400
+
     alert_data = load_data()
-    
-    # Remove from critical alerts
+
     alert_data['critical_alerts'] = [
-        a for a in alert_data['critical_alerts'] 
+        a for a in alert_data['critical_alerts']
         if a['cow_id'] != cow_id
     ]
-    
-    # Remove from early warnings
+
     alert_data['early_warnings'] = [
-        a for a in alert_data['early_warnings'] 
+        a for a in alert_data['early_warnings']
         if a['cow_id'] != cow_id
     ]
-    
-    # Update herd summary
+
     alert_data['herd_summary']['critical'] = len(alert_data['critical_alerts'])
     alert_data['herd_summary']['warning'] = len(alert_data['early_warnings'])
     alert_data['herd_summary']['healthy'] = (
-        alert_data['herd_summary']['total'] - 
-        alert_data['herd_summary']['critical'] - 
+        alert_data['herd_summary']['total'] -
+        alert_data['herd_summary']['critical'] -
         alert_data['herd_summary']['warning']
     )
-    
+
     save_data(alert_data)
-    
+
     return jsonify({
         "success": True,
         "message": f"{cow_id} marked as treated",
@@ -543,5 +518,5 @@ if __name__ == '__main__':
     print("  POST /api/diagnose-photo")
     print("  POST /api/gemini-chat")
     print("=" * 70)
-    
+
     app.run(host='0.0.0.0', port=5000, debug=True)
